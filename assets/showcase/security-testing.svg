@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <title>安全测试示意：只对授权范围内的站点测试，结果整理成按严重度排序的报告</title>
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0" r="1">
+      <stop offset="0" stop-color="#1f211f" />
+      <stop offset="1" stop-color="#111211" />
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1.5" fill="#fff" fill-opacity="0.05" />
+    </pattern>
+    <style>
+      .t { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif; }
+      .m { font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)" />
+  <rect width="1600" height="1000" fill="url(#dots)" />
+
+  <!-- 授权范围 -->
+  <rect x="100.5" y="170.5" width="539" height="659" rx="21.5" fill="#1a1b1a" stroke="#30332f" />
+  <text class="t" x="140" y="238" font-size="34" font-weight="600" fill="#ecede9">授权范围</text>
+  <text class="t" x="140" y="280" font-size="22" fill="#6d716b">只对你点过「允许」的站点测试</text>
+  <path d="M101 312.5H639" stroke="#2a2d2a" />
+
+  <circle cx="160" cy="368" r="16" fill="#6cc48a" fill-opacity="0.16" />
+  <path d="m153 368 5 5 9-10" stroke="#6cc48a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <text class="m" x="192" y="376" font-size="24" fill="#ecede9">staging.example.com</text>
+
+  <circle cx="160" cy="440" r="16" fill="#6cc48a" fill-opacity="0.16" />
+  <path d="m153 440 5 5 9-10" stroke="#6cc48a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <text class="m" x="192" y="448" font-size="24" fill="#ecede9">api.staging.example.com</text>
+
+  <path d="M140 496.5H600" stroke="#262826" />
+  <circle cx="160" cy="548" r="16" stroke="#ee735a" stroke-width="2.5" />
+  <path d="M154 542l12 12M166 542l-12 12" stroke="#ee735a" stroke-width="2.5" stroke-linecap="round" />
+  <text class="m" x="192" y="556" font-size="24" fill="#6d716b">other-site.com</text>
+  <rect x="140" y="586" width="300" height="40" rx="10" fill="#ee735a" fill-opacity="0.12" />
+  <text class="t" x="158" y="613" font-size="21" fill="#ee735a">范围外 · 已拦下，先问你</text>
+
+  <rect x="140.5" y="700.5" width="459" height="89" rx="14" fill="#121312" stroke="#2a2d2a" />
+  <text class="t" x="166" y="740" font-size="22" fill="#9ca09a">抓包 · 重放 · Fuzz · 爬取</text>
+  <text class="t" x="166" y="774" font-size="20" fill="#6d716b">都只在授权范围内进行</text>
+
+  <!-- 报告 -->
+  <rect x="700.5" y="130.5" width="799" height="739" rx="21.5" fill="#1a1b1a" stroke="#30332f" />
+  <text class="t" x="744" y="200" font-size="34" font-weight="600" fill="#ecede9">测试报告</text>
+  <text class="m" x="1456" y="198" text-anchor="end" font-size="22" fill="#6d716b">staging.example.com</text>
+  <path d="M701 232.5H1499" stroke="#2a2d2a" />
+
+  <rect x="744" y="262" width="120" height="44" rx="22" fill="#e5675a" fill-opacity="0.16" />
+  <text class="t" x="804" y="292" text-anchor="middle" font-size="22" fill="#e5675a">高危 1</text>
+  <rect x="880" y="262" width="120" height="44" rx="22" fill="#e7b862" fill-opacity="0.16" />
+  <text class="t" x="940" y="292" text-anchor="middle" font-size="22" fill="#e7b862">中危 2</text>
+  <rect x="1016" y="262" width="120" height="44" rx="22" fill="#7aa2f7" fill-opacity="0.16" />
+  <text class="t" x="1076" y="292" text-anchor="middle" font-size="22" fill="#7aa2f7">低危 3</text>
+
+  <rect x="744.5" y="340.5" width="711" height="149" rx="14" fill="#1f201f" stroke="#e5675a" stroke-opacity="0.45" />
+  <rect x="744" y="341" width="5" height="148" rx="2.5" fill="#e5675a" />
+  <text class="t" x="776" y="386" font-size="28" font-weight="600" fill="#ecede9">前端代码里有疑似密钥</text>
+  <text class="m" x="776" y="428" font-size="22" fill="#9ca09a">证据：app.js · 值已打码</text>
+  <text class="t" x="776" y="466" font-size="22" fill="#6cc48a">建议：移到服务端并轮换</text>
+
+  <rect x="744.5" y="512.5" width="711" height="109" rx="14" fill="#1f201f" stroke="#30332f" />
+  <rect x="744" y="513" width="5" height="108" rx="2.5" fill="#e7b862" />
+  <text class="t" x="776" y="556" font-size="26" font-weight="500" fill="#ecede9">输入未做输出编码</text>
+  <rect x="776" y="580" width="360" height="12" rx="6" fill="#2e312e" />
+
+  <rect x="744.5" y="644.5" width="711" height="109" rx="14" fill="#1f201f" stroke="#30332f" />
+  <rect x="744" y="645" width="5" height="108" rx="2.5" fill="#e7b862" />
+  <text class="t" x="776" y="688" font-size="26" font-weight="500" fill="#ecede9">接口报错暴露内部信息</text>
+  <rect x="776" y="712" width="300" height="12" rx="6" fill="#2e312e" />
+
+  <text class="m" x="744" y="822" font-size="22" fill="#6d716b">+ 3 条低危 · 导出 Markdown</text>
+</svg>

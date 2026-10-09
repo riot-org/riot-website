@@ -1,64 +1,82 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="1600"
-  height="1000"
-  viewBox="0 0 1600 1000"
-  fill="none"
->
-  <title>DOM 拾取截图占位图</title>
-  <rect width="1600" height="1000" fill="#e9ebe8" />
-  <rect x="48.5" y="48.5" width="1503" height="903" stroke="#c6cbc4" />
-  <path
-    d="M48 104V48H104M1496 48H1552V104M1552 896V952H1496M104 952H48V896"
-    stroke="#848e80"
-    stroke-width="3"
-  />
-  <text
-    x="94"
-    y="152"
-    fill="#677060"
-    font-family="Arial, sans-serif"
-    font-size="42"
-  >
-    RIOT / DOM PICKER
-  </text>
-  <text
-    x="800"
-    y="491"
-    text-anchor="middle"
-    fill="#384332"
-    font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif"
-    font-size="66"
-  >
-    DOM 拾取
-  </text>
-  <text
-    x="800"
-    y="584"
-    text-anchor="middle"
-    fill="#71796b"
-    font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif"
-    font-size="52"
-  >
-    截图待补充
-  </text>
-  <text
-    x="94"
-    y="895"
-    fill="#677060"
-    font-family="Arial, sans-serif"
-    font-size="42"
-  >
-    06 / SCREENSHOT PLACEHOLDER
-  </text>
-  <text
-    x="1506"
-    y="895"
-    text-anchor="end"
-    fill="#677060"
-    font-family="Arial, sans-serif"
-    font-size="42"
-  >
-    16:10
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <title>DOM 拾取示意：点选页面按钮，选择器作为上下文进入对话</title>
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0" r="1">
+      <stop offset="0" stop-color="#1f211f" />
+      <stop offset="1" stop-color="#111211" />
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1.5" fill="#fff" fill-opacity="0.05" />
+    </pattern>
+    <clipPath id="win"><rect x="100" y="90" width="1400" height="620" rx="22" /></clipPath>
+    <filter id="shadow" x="-20%" y="-50%" width="140%" height="200%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.35" />
+    </filter>
+    <style>
+      .t { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif; }
+      .m { font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)" />
+  <rect width="1600" height="1000" fill="url(#dots)" />
+
+  <!-- 页面 -->
+  <g clip-path="url(#win)">
+    <rect x="100" y="90" width="1400" height="60" fill="#1a1b1a" />
+    <rect x="100" y="150" width="1400" height="560" fill="#f4f4f1" />
+  </g>
+  <circle cx="136" cy="120" r="7" fill="#3a3d3a" />
+  <circle cx="160" cy="120" r="7" fill="#3a3d3a" />
+  <circle cx="184" cy="120" r="7" fill="#3a3d3a" />
+  <text class="m" x="800" y="128" text-anchor="middle" font-size="22" fill="#6d716b">shop.example.com</text>
+  <rect x="100.5" y="90.5" width="1399" height="619" rx="21.5" stroke="#30332f" />
+
+  <rect x="150" y="186" width="110" height="22" rx="6" fill="#1c1d1b" />
+  <rect x="1150" y="190" width="70" height="14" rx="7" fill="#c9cbc5" />
+  <rect x="1250" y="190" width="70" height="14" rx="7" fill="#c9cbc5" />
+  <rect x="1350" y="190" width="80" height="14" rx="7" fill="#c9cbc5" />
+  <rect x="150" y="252" width="420" height="30" rx="8" fill="#2a2b29" />
+  <rect x="150" y="300" width="320" height="16" rx="8" fill="#c9cbc5" />
+
+  <rect x="150.5" y="350.5" width="399" height="319" rx="16" fill="#fff" stroke="#e1e2dd" />
+  <rect x="170" y="370" width="360" height="130" rx="10" fill="#e9eae6" />
+  <rect x="170" y="526" width="200" height="18" rx="6" fill="#2a2b29" />
+  <rect x="170" y="558" width="90" height="14" rx="7" fill="#c9cbc5" />
+  <rect x="170" y="602" width="150" height="46" rx="10" fill="#1c1d1b" />
+  <text class="t" x="245" y="633" text-anchor="middle" font-size="22" fill="#fff">购买</text>
+
+  <rect x="590.5" y="350.5" width="399" height="319" rx="16" fill="#fff" stroke="#e1e2dd" />
+  <rect x="610" y="370" width="360" height="130" rx="10" fill="#e9eae6" />
+  <rect x="610" y="526" width="220" height="18" rx="6" fill="#2a2b29" />
+  <rect x="610" y="558" width="90" height="14" rx="7" fill="#c9cbc5" />
+  <rect x="610" y="602" width="150" height="46" rx="10" fill="#1c1d1b" />
+  <text class="t" x="685" y="633" text-anchor="middle" font-size="22" fill="#fff">购买</text>
+
+  <rect x="1030.5" y="350.5" width="399" height="319" rx="16" fill="#fff" stroke="#e1e2dd" />
+  <rect x="1050" y="370" width="360" height="130" rx="10" fill="#e9eae6" />
+  <rect x="1050" y="526" width="180" height="18" rx="6" fill="#2a2b29" />
+  <rect x="1050" y="558" width="90" height="14" rx="7" fill="#c9cbc5" />
+  <rect x="1050" y="602" width="150" height="46" rx="10" fill="#1c1d1b" />
+  <text class="t" x="1125" y="633" text-anchor="middle" font-size="22" fill="#fff">购买</text>
+
+  <!-- 拾取高亮 -->
+  <rect x="603.5" y="595.5" width="163" height="59" rx="13" fill="#ee735a" fill-opacity="0.16" stroke="#ee735a" stroke-width="3" />
+  <g filter="url(#shadow)">
+    <rect x="786" y="602" width="372" height="48" rx="10" fill="#1a1b1a" />
+  </g>
+  <text class="m" x="806" y="634" font-size="24" fill="#ee735a">button.buy-now</text>
+  <text class="m" x="1138" y="634" text-anchor="end" font-size="20" fill="#9ca09a">150 × 46</text>
+  <path d="M704 640 704 692 718 678 730 704 742 698 730 673 750 673Z" fill="#1c1d1b" stroke="#fff" stroke-width="3" stroke-linejoin="round" />
+
+  <path d="M640 656C640 730 275 716 275 790" stroke="#ee735a" stroke-opacity="0.6" stroke-width="2.5" stroke-dasharray="4 10" stroke-linecap="round" />
+
+  <!-- 对话输入 -->
+  <rect x="100.5" y="760.5" width="1399" height="149" rx="27.5" fill="#1a1b1a" stroke="#30332f" />
+  <rect x="141" y="793" width="268" height="46" rx="12" fill="#ee735a" fill-opacity="0.14" stroke="#ee735a" stroke-opacity="0.5" />
+  <text class="m" x="162" y="824" font-size="24" fill="#ee735a">&lt;button.buy-now&gt;</text>
+  <text class="t" x="430" y="826" font-size="30" fill="#ecede9">把它改成主色，并加上加载状态</text>
+  <rect x="140" y="858" width="140" height="30" rx="15" fill="#262826" />
+  <rect x="292" y="858" width="110" height="30" rx="15" fill="#262826" />
+  <circle cx="1456" cy="866" r="22" fill="#ee735a" />
+  <path d="M1456 875v-18m-8 8 8-8 8 8" stroke="#1a1b1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
 </svg>

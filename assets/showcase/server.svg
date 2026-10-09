@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <title>服务器部署示意：用 Docker 在 Linux 服务器上运行 riot-server，再用浏览器访问</title>
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0" r="1">
+      <stop offset="0" stop-color="#1f211f" />
+      <stop offset="1" stop-color="#111211" />
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1.5" fill="#fff" fill-opacity="0.05" />
+    </pattern>
+    <clipPath id="win"><rect x="960" y="250" width="540" height="500" rx="20" /></clipPath>
+    <style>
+      .t { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif; }
+      .m { font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)" />
+  <rect width="1600" height="1000" fill="url(#dots)" />
+
+  <!-- 终端 -->
+  <rect x="100.5" y="170.5" width="779" height="659" rx="21.5" fill="#121312" stroke="#30332f" />
+  <path d="M101 226.5H879" stroke="#2a2d2a" />
+  <circle cx="134" cy="198" r="7" fill="#3a3d3a" />
+  <circle cx="158" cy="198" r="7" fill="#3a3d3a" />
+  <circle cx="182" cy="198" r="7" fill="#3a3d3a" />
+  <text class="m" x="490" y="206" text-anchor="middle" font-size="22" fill="#6d716b">riot@server: ~</text>
+
+  <text class="m" x="140" y="292" font-size="26" fill="#c9ccc6"><tspan fill="#ee735a">$</tspan> docker run -d --name riot \</text>
+  <text class="m" x="202" y="334" font-size="26" fill="#c9ccc6">-p 127.0.0.1:7823:7823 \</text>
+  <text class="m" x="202" y="376" font-size="26" fill="#c9ccc6">-v riot-home:/home/riot \</text>
+  <text class="m" x="202" y="418" font-size="26" fill="#c9ccc6">ghcr.io/riot-org/riot-server</text>
+  <text class="m" x="140" y="466" font-size="26" fill="#6d716b">3f9c2e1b7a04…</text>
+
+  <text class="m" x="140" y="540" font-size="26" fill="#c9ccc6"><tspan fill="#ee735a">$</tspan> docker exec riot riot-server token</text>
+  <text class="m" x="140" y="588" font-size="26" fill="#6cc48a">登录链接已生成</text>
+  <text class="m" x="140" y="630" font-size="26" fill="#6d716b">http://127.0.0.1:7823/…</text>
+
+  <rect x="140" y="682" width="300" height="44" rx="10" fill="#1d1f1d" stroke="#2c2f2c" />
+  <circle cx="166" cy="704" r="6" fill="#6cc48a" />
+  <text class="m" x="184" y="712" font-size="22" fill="#9ca09a">linux/arm64 · 运行中</text>
+  <rect x="140" y="760" width="14" height="28" fill="#9ca09a" />
+
+  <!-- 连接 -->
+  <path d="M888 500H952" stroke="#ee735a" stroke-opacity="0.6" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round" />
+  <circle cx="920" cy="500" r="22" fill="#1a1b1a" stroke="#ee735a" stroke-width="2.5" />
+  <path d="m913 492 9 8-9 8" stroke="#ee735a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- 浏览器里的网页版 -->
+  <g clip-path="url(#win)">
+    <rect x="960" y="250" width="540" height="500" fill="#1a1b1a" />
+    <rect x="960" y="250" width="540" height="56" fill="#232523" />
+    <rect x="960" y="306" width="140" height="444" fill="#161716" />
+  </g>
+  <rect x="960.5" y="250.5" width="539" height="499" rx="19.5" stroke="#30332f" />
+  <circle cx="990" cy="278" r="6" fill="#3a3d3a" />
+  <circle cx="1010" cy="278" r="6" fill="#3a3d3a" />
+  <rect x="1036" y="262" width="436" height="32" rx="16" fill="#161716" />
+  <text class="m" x="1060" y="285" font-size="20" fill="#9ca09a">riot.example.com</text>
+  <rect x="980" y="336" width="96" height="12" rx="6" fill="#3a3d3a" />
+  <rect x="972" y="370" width="116" height="34" rx="8" fill="#242624" />
+  <rect x="984" y="381" width="80" height="12" rx="6" fill="#5a5f59" />
+  <rect x="984" y="426" width="70" height="12" rx="6" fill="#2e312e" />
+  <rect x="984" y="460" width="88" height="12" rx="6" fill="#2e312e" />
+  <rect x="984" y="494" width="64" height="12" rx="6" fill="#2e312e" />
+  <rect x="1250" y="336" width="220" height="44" rx="16" fill="#262826" />
+  <rect x="1270" y="352" width="170" height="12" rx="6" fill="#4a4e49" />
+  <rect x="1130" y="408" width="300" height="12" rx="6" fill="#2e312e" />
+  <rect x="1130" y="434" width="340" height="12" rx="6" fill="#2e312e" />
+  <rect x="1130" y="460" width="240" height="12" rx="6" fill="#2e312e" />
+  <rect x="1130.5" y="496.5" width="339" height="119" rx="12" fill="#121312" stroke="#2a2d2a" />
+  <text class="m" x="1150" y="534" font-size="20" fill="#c9ccc6"><tspan fill="#ee735a">$</tspan> npm test</text>
+  <text class="m" x="1150" y="568" font-size="20" fill="#6cc48a">✓ 128 passed</text>
+  <text class="m" x="1150" y="600" font-size="18" fill="#6d716b">sandbox: bubblewrap</text>
+  <rect x="1130.5" y="660.5" width="339" height="59" rx="18" fill="#202220" stroke="#30332f" />
+  <rect x="1154" y="684" width="140" height="12" rx="6" fill="#3a3d3a" />
+  <circle cx="1440" cy="690" r="15" fill="#ee735a" />
+  <path d="M1440 697v-14m-6 6 6-6 6 6" stroke="#1a1b1a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

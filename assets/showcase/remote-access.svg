@@ -1,64 +1,86 @@
-<svg
-  xmlns="http://www.w3.org/2000/svg"
-  width="1600"
-  height="1000"
-  viewBox="0 0 1600 1000"
-  fill="none"
->
-  <title>远程连接截图占位图</title>
-  <rect width="1600" height="1000" fill="#e9ebe8" />
-  <rect x="48.5" y="48.5" width="1503" height="903" stroke="#c6cbc4" />
-  <path
-    d="M48 104V48H104M1496 48H1552V104M1552 896V952H1496M104 952H48V896"
-    stroke="#848e80"
-    stroke-width="3"
-  />
-  <text
-    x="94"
-    y="152"
-    fill="#677060"
-    font-family="Arial, sans-serif"
-    font-size="42"
-  >
-    RIOT / REMOTE ACCESS
-  </text>
-  <text
-    x="800"
-    y="491"
-    text-anchor="middle"
-    fill="#384332"
-    font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif"
-    font-size="66"
-  >
-    远程连接
-  </text>
-  <text
-    x="800"
-    y="584"
-    text-anchor="middle"
-    fill="#71796b"
-    font-family="system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif"
-    font-size="52"
-  >
-    截图待补充
-  </text>
-  <text
-    x="94"
-    y="895"
-    fill="#677060"
-    font-family="Arial, sans-serif"
-    font-size="42"
-  >
-    01 / SCREENSHOT PLACEHOLDER
-  </text>
-  <text
-    x="1506"
-    y="895"
-    text-anchor="end"
-    fill="#677060"
-    font-family="Arial, sans-serif"
-    font-size="42"
-  >
-    16:10
-  </text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" fill="none">
+  <title>远程连接示意：手机与桌面同步同一个会话</title>
+  <defs>
+    <radialGradient id="bg" cx="0.5" cy="0" r="1">
+      <stop offset="0" stop-color="#1f211f" />
+      <stop offset="1" stop-color="#111211" />
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1.5" fill="#fff" fill-opacity="0.05" />
+    </pattern>
+    <clipPath id="win"><rect x="100" y="160" width="940" height="680" rx="22" /></clipPath>
+    <style>
+      .t { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif; }
+      .m { font-family: "SF Mono", Menlo, Consolas, "Liberation Mono", monospace; }
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)" />
+  <rect width="1600" height="1000" fill="url(#dots)" />
+
+  <!-- 桌面窗口 -->
+  <rect x="100" y="160" width="940" height="680" rx="22" fill="#1a1b1a" />
+  <g clip-path="url(#win)">
+    <rect x="100" y="216" width="210" height="624" fill="#161716" />
+    <rect x="116" y="300" width="178" height="44" rx="10" fill="#242624" />
+    <rect x="132" y="246" width="96" height="14" rx="7" fill="#3a3d3a" />
+    <rect x="132" y="315" width="132" height="14" rx="7" fill="#5a5f59" />
+    <rect x="132" y="375" width="120" height="14" rx="7" fill="#2e312e" />
+    <rect x="132" y="423" width="142" height="14" rx="7" fill="#2e312e" />
+    <rect x="132" y="471" width="98" height="14" rx="7" fill="#2e312e" />
+    <rect x="132" y="551" width="96" height="14" rx="7" fill="#3a3d3a" />
+    <rect x="132" y="599" width="128" height="14" rx="7" fill="#2e312e" />
+    <rect x="132" y="647" width="104" height="14" rx="7" fill="#2e312e" />
+  </g>
+  <rect x="100.5" y="160.5" width="939" height="679" rx="21.5" stroke="#30332f" />
+  <path d="M101 216.5H1039M310.5 217V839" stroke="#2a2d2a" />
+  <circle cx="134" cy="188" r="7" fill="#3a3d3a" />
+  <circle cx="158" cy="188" r="7" fill="#3a3d3a" />
+  <circle cx="182" cy="188" r="7" fill="#3a3d3a" />
+  <text class="m" x="675" y="196" text-anchor="middle" font-size="22" fill="#6d716b">web-app</text>
+
+  <rect x="592" y="250" width="408" height="68" rx="22" fill="#262826" />
+  <text class="t" x="616" y="295" font-size="30" fill="#e3e5e0">跑一遍测试，修掉失败用例</text>
+  <rect x="350" y="352" width="500" height="14" rx="7" fill="#2e312e" />
+  <rect x="350" y="382" width="580" height="14" rx="7" fill="#2e312e" />
+  <rect x="350" y="412" width="380" height="14" rx="7" fill="#2e312e" />
+
+  <rect x="350.5" y="452.5" width="649" height="211" rx="14" fill="#121312" stroke="#2a2d2a" />
+  <text class="m" x="378" y="500" font-size="26" fill="#c9ccc6"><tspan fill="#ee735a">$</tspan> cargo test --workspace</text>
+  <text class="m" x="378" y="546" font-size="26" fill="#6d716b">running 42 tests</text>
+  <text class="m" x="378" y="592" font-size="26" fill="#6cc48a">test result: ok. 42 passed</text>
+  <rect x="378" y="614" width="14" height="28" fill="#9ca09a" />
+
+  <rect x="350.5" y="700.5" width="649" height="103" rx="22" fill="#202220" stroke="#30332f" />
+  <rect x="380" y="732" width="220" height="14" rx="7" fill="#3a3d3a" />
+  <rect x="380" y="764" width="90" height="24" rx="12" fill="#2a2c2a" />
+  <rect x="482" y="764" width="120" height="24" rx="12" fill="#2a2c2a" />
+  <circle cx="962" cy="768" r="20" fill="#3a3d3a" />
+
+  <!-- 同步 -->
+  <circle cx="1110" cy="500" r="80" fill="#ee735a" fill-opacity="0.07" />
+  <path d="M1048 500H1172" stroke="#ee735a" stroke-opacity="0.6" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round" />
+  <circle cx="1110" cy="500" r="36" fill="#1a1b1a" stroke="#ee735a" stroke-width="2.5" />
+  <path d="M1094 491h30m-8-8 8 8-8 8M1126 509h-30m8-8-8 8 8 8" stroke="#ee735a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- 手机 -->
+  <rect x="1181" y="191" width="318" height="618" rx="53" fill="#1a1b1a" stroke="#3a3d3a" stroke-width="2" />
+  <rect x="1300" y="208" width="80" height="24" rx="12" fill="#0e0f0e" />
+  <text class="t" x="1214" y="292" font-size="32" font-weight="600" fill="#ecede9">Riot</text>
+  <circle cx="1378" cy="282" r="6" fill="#6cc48a" />
+  <text class="t" x="1392" y="291" font-size="24" fill="#9ca09a">已连接</text>
+  <path d="M1182 318.5H1498" stroke="#2a2d2a" />
+  <rect x="1300" y="344" width="170" height="48" rx="18" fill="#262826" />
+  <rect x="1322" y="362" width="126" height="12" rx="6" fill="#4a4e49" />
+  <rect x="1210" y="420" width="220" height="12" rx="6" fill="#2e312e" />
+  <rect x="1210" y="444" width="260" height="12" rx="6" fill="#2e312e" />
+  <rect x="1210" y="468" width="170" height="12" rx="6" fill="#2e312e" />
+  <rect x="1210.5" y="500.5" width="259" height="149" rx="14" fill="#121312" stroke="#2a2d2a" />
+  <text class="m" x="1230" y="542" font-size="20" fill="#c9ccc6"><tspan fill="#ee735a">$</tspan> cargo test</text>
+  <text class="m" x="1230" y="578" font-size="20" fill="#6d716b">running 42 tests</text>
+  <text class="m" x="1230" y="614" font-size="20" fill="#6cc48a">ok. 42 passed</text>
+  <rect x="1210.5" y="724.5" width="259" height="51" rx="25.5" fill="#202220" stroke="#30332f" />
+  <rect x="1236" y="744" width="120" height="12" rx="6" fill="#3a3d3a" />
+  <circle cx="1444" cy="750" r="17" fill="#ee735a" />
+  <path d="M1444 758v-16m-7 7 7-7 7 7" stroke="#1a1b1a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="1290" y="790" width="100" height="6" rx="3" fill="#3a3d3a" />
 </svg>

@@ -134,7 +134,13 @@ function applyOS() {
     link.href = DOWNLOADS.win.url;
   });
   const os = detectOS();
-  if (!os) return;
+  if (!os) {
+    if (/Linux/i.test(navigator.userAgent) && !/Android/i.test(navigator.userAgent)) {
+      document.getElementById("download-detect").textContent =
+        "Linux 上没有桌面版，可以用下面的 Docker 镜像部署服务器版。";
+    }
+    return;
+  }
   const download = DOWNLOADS[os];
   document.querySelectorAll(".js-primary-download").forEach((link) => {
     link.href = download.url;
@@ -144,7 +150,7 @@ function applyOS() {
   document.getElementById("hero-download-meta").textContent = download.meta;
   document.getElementById("download-detect").textContent =
     os === "mac"
-      ? "macOS 安装包适用于 Apple Silicon 芯片。"
+      ? "macOS 版只支持 Apple Silicon（M1 及之后的芯片），Intel Mac 无法运行。"
       : "Windows 安装包适用于 x64 设备。";
   const card = document.getElementById(
     os === "mac" ? "dl-card-mac" : "dl-card-win",
@@ -238,8 +244,67 @@ function initDownloadMeta() {
   });
 }
 
+/** 区块滚到视口时淡入。同一组卡片错开一点出场；减少动态效果时直接显示。 */
+function initReveal() {
+  const groups = [
+    ".product-preview",
+    ".section-heading",
+    ".capability-gallery > .capability",
+    ".principles > article",
+    ".permission-example",
+    ".download-heading",
+    ".dl-grid > .dl-card",
+    ".dl-server",
+  ];
+  const items = [];
+  groups.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((el, i) => {
+      el.classList.add("reveal");
+      el.style.setProperty("--reveal-delay", `${(i % 3) * 0.08}s`);
+      items.push(el);
+    });
+  });
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach((el) => el.classList.add("in"));
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("in");
+        io.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px" },
+  );
+  items.forEach((el) => io.observe(el));
+}
+
+/** 复制按钮：data-copy 指向要复制文本的元素 id。 */
+function initCopy() {
+  document.querySelectorAll(".copy-btn[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const source = document.getElementById(btn.dataset.copy);
+      if (!source) return;
+      try {
+        await navigator.clipboard.writeText(source.textContent.trim());
+        btn.textContent = "已复制";
+      } catch {
+        btn.textContent = "请手动复制";
+      }
+      setTimeout(() => {
+        btn.textContent = "复制";
+      }, 1600);
+    });
+  });
+}
+
 applyOS();
 initDownloads();
 initNav();
 initMobileMenu();
 initYear();
+initReveal();
+initCopy();
