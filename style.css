@@ -180,6 +180,31 @@ p {
 .nav-github span {
   margin-left: 4px;
 }
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  font-size: 13px;
+  line-height: 1;
+}
+.lang-switch button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--faint);
+  cursor: pointer;
+}
+.lang-switch button.is-current {
+  color: var(--fg);
+  font-weight: 600;
+}
+.lang-switch button:hover {
+  color: var(--fg);
+}
+.lang-sep {
+  color: var(--line-strong);
+}
 
 /* ---------- 按钮与链接 ---------- */
 .btn {
@@ -263,7 +288,7 @@ p {
 .text-link:hover {
   color: var(--accent);
 }
-.text-link:hover span {
+.text-link:hover .link-arrow {
   transform: translate(2px, 2px);
 }
 .nav-burger {
@@ -382,6 +407,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 24px;
   margin-top: 36px;
 }
